@@ -21,4 +21,3 @@ alunos = [
 puts("#{alunos[0][:nome]}, tirou nota #{alunos[0][:nota]} na disciplina de #{alunos[0][:disciplina]}")
 puts("#{alunos[1][:nome]}, tirou nota #{alunos[1][:nota]} na disciplina de #{alunos[1][:disciplina]}")
 puts("#{alunos[2][:nome]}, tirou nota #{alunos[2][:nota]} na disciplina de #{alunos[2][:disciplina]}")
-
