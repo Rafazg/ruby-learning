@@ -36,3 +36,12 @@ puts("#{alunos[3]} Tirou nota #{notas[3]}")
 #* imprimir a quantidade de alunos nessa turma. Imprima a frase
 #* “Essa turma possui x participantes” em que x deve ser o valor retornado com alunos.length.
 puts("Essa turma possui #{alunos.length()} alunos")
+
+#* Soma de elementos: Crie uma função que recebe um array de números e retorna a soma de todos os elementos.
+
+def arrSum(arr)
+    arr.inject(0){ |sum, num| sum + num}
+end
+array = [1, 2, 3, 4, 5]
+
+puts arrSum(array)

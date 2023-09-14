@@ -126,4 +126,5 @@ def tela_inicial
 end
 
 tela_inicial
+
 #Nesta versão revisada, o código lida melhor com a exibição das informações da cont
