@@ -39,9 +39,9 @@ puts("Essa turma possui #{alunos.length()} alunos")
 
 #* Soma de elementos: Crie uma função que recebe um array de números e retorna a soma de todos os elementos.
 
-def arrSum(arr)
-    arr.inject(0){ |sum, num| sum + num}
-end
-array = [1, 2, 3, 4, 5]
+number = [2, 1, 5, 3, 4]
+keys = ['key_1011', 'key_0110', 'key_1101', 'key_0101', 'key_1010']
+browsers = ['Chrome', 'Firefox', 'Safari', 'Opera', 'IE']
 
-puts arrSum(array)
+puts number.slice()
+
