@@ -10,6 +10,8 @@ class Account
 end
 
 
+accounts = []
+
 def create_account()
     puts('Digite o número da conta: ')
     account_number = gets.to_s
@@ -22,6 +24,7 @@ def create_account()
 
    return Account.new(account_number, account_balance, account_user)
 end
+
 
 
 def show_data(account)
@@ -50,7 +53,7 @@ end
 
 account = nil
 
-def start_screen(account)
+def start_screen(accounts)
     
     system "clear"
 
@@ -65,7 +68,7 @@ def start_screen(account)
     '
 
     puts '-------Escolha uma das seguintes opções-------'
-    puts '1 - Criar outra conta'
+    puts '1 - Criar conta'
     puts '2 - Ver Dados da Conta'
     puts '0 - Sair'
 
@@ -85,10 +88,21 @@ def start_screen(account)
                                                             
            '
             account = create_account()
-            start_screen(account)
+            accounts << account
+            start_screen(accounts)
         when 2
             system "clear"
-            show_data(account)
+            if account != nil
+                show_data(account)
+            end
+        else
+            puts('você precisa criar uma conta')
+            puts('0 - Sair')
+            
+            choice = gets.to_i
+            if choice == 0
+                start_screen(accounts)
+            end
           
     when 0
         exit
