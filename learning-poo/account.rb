@@ -6,55 +6,60 @@ class Account
         @balance = balance
         @user = user
     end
-
 end
-
 
 accounts = []
 
-def create_account()
+def create_account
     puts('Digite o número da conta: ')
-    account_number = gets.to_s
+    account_number = gets.chomp  # Use gets.chomp to remove newline character
 
     puts('Digite o saldo da conta: ')
     account_balance = gets.to_i
 
     puts('Digite o nome do usuário: ')
-    account_user = gets.to_s
+    account_user = gets.chomp  # Use gets.chomp to remove newline character
 
-   return Account.new(account_number, account_balance, account_user)
+    return Account.new(account_number, account_balance, account_user)
 end
 
+def show_data(accounts)
+    puts 'Escolha uma conta para ver os dados:'
+    accounts.each_with_index do |account, index|
+        puts "#{index + 1} - Número da conta: #{account.number}"
+    end
 
+    selection = gets.to_i - 1  # Subtract 1 to match array index
 
-def show_data(account)
-    puts'
-    ██████╗  █████╗ ██████╗  ██████╗ ███████╗
-    ██╔══██╗██╔══██╗██╔══██╗██╔═══██╗██╔════╝
-    ██║  ██║███████║██║  ██║██║   ██║███████╗
-    ██║  ██║██╔══██║██║  ██║██║   ██║╚════██║
-    ██████╔╝██║  ██║██████╔╝╚██████╔╝███████║
-    ╚═════╝ ╚═╝  ╚═╝╚═════╝  ╚═════╝ ╚══════╝
+    if selection >= 0 && selection < accounts.length
+        account = accounts[selection]
+
+        puts '
+        ██████╗  █████╗ ██████╗  ██████╗ ███████╗
+        ██╔══██╗██╔══██╗██╔══██╗██╔═══██╗██╔════╝
+        ██║  ██║███████║██║  ██║██║   ██║███████╗
+        ██║  ██║██╔══██║██║  ██║██║   ██║╚════██║
+        ██████╔╝██║  ██║██████╔╝╚██████╔╝███████║
+        ╚═════╝ ╚═╝  ╚═╝╚═════╝  ╚═════╝ ╚══════╝
                                              
-    '
-    puts("Número da conta: #{account.number}")
-    puts("Saldo da conta: #{account.balance}")
-    puts("Nome do usuário: #{account.user}")
-    puts '-------------------------------------'
-    puts('0 - Voltar')
+        '
+        puts("Número da conta: #{account.number}")
+        puts("Saldo da conta: #{account.balance}")
+        puts("Nome do usuário: #{account.user}")
+        puts '-------------------------------------'
+        puts('0 - Voltar')
 
-    result = gets.to_i
+        result = gets.to_i
 
-    if result == 0
-        start_screen(account)
+        if result == 0
+            start_screen(accounts)
+        end
+    else
+        puts('Seleção inválida. Tente novamente.')
     end
 end
 
-
-account = nil
-
 def start_screen(accounts)
-    
     system "clear"
 
     puts '
@@ -63,8 +68,8 @@ def start_screen(accounts)
     ██║ █╗ ██║█████╗  ██║     ██║     ██║   ██║██╔████╔██║█████╗  
     ██║███╗██║██╔══╝  ██║     ██║     ██║   ██║██║╚██╔╝██║██╔══╝  
     ╚███╔███╔╝███████╗███████╗╚██████╗╚██████╔╝██║ ╚═╝ ██║███████╗
-     ╚══╝╚══╝ ╚══════╝╚══════╝ ╚═════╝ ╚═════╝ ╚═╝     ╚═╝╚══════╝
-                                                                  
+    ╚══╝╚══╝ ╚══════╝╚══════╝ ╚═════╝ ╚═════╝ ╚═╝     ╚═╝╚══════╝
+                                                          
     '
 
     puts '-------Escolha uma das seguintes opções-------'
@@ -72,38 +77,25 @@ def start_screen(accounts)
     puts '2 - Ver Dados da Conta'
     puts '0 - Sair'
 
-
     result = gets.to_i
 
     case result
-        when 1
-            system "clear"
-            puts '
-            ██████╗██████╗ ███████╗ █████╗ ████████╗███████╗
-           ██╔════╝██╔══██╗██╔════╝██╔══██╗╚══██╔══╝██╔════╝
-           ██║     ██████╔╝█████╗  ███████║   ██║   █████╗  
-           ██║     ██╔══██╗██╔══╝  ██╔══██║   ██║   ██╔══╝  
-           ╚██████╗██║  ██║███████╗██║  ██║   ██║   ███████╗
-            ╚═════╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝   ╚═╝   ╚══════╝
+    when 1
+        system "clear"
+        puts '
+        ██████╗██████╗ ███████╗ █████╗ ████████╗███████╗
+        ██╔════╝██╔══██╗██╔════╝██╔══██╗╚══██╔══╝██╔════╝
+        ██║     ██████╔╝█████╗  ███████║   ██║   █████╗  
+        ██║     ██╔══██╗██╔══╝  ██╔══██║   ██║   ██╔══╝  
+        ╚██████╗██║  ██║███████╗██║  ██║   ██║   ███████╗
+        ╚═════╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝   ╚═╝   ╚══════╝
                                                             
-           '
-            account = create_account()
-            accounts << account
-            start_screen(accounts)
-        when 2
-            system "clear"
-            if account != nil
-                show_data(account)
-            end
-        else
-            puts('você precisa criar uma conta')
-            puts('0 - Sair')
-            
-            choice = gets.to_i
-            if choice == 0
-                start_screen(accounts)
-            end
-          
+        '
+        account = create_account()
+        accounts.push(account)
+        start_screen(accounts)
+    when 2
+        show_data(accounts)
     when 0
         exit
     else
@@ -111,4 +103,4 @@ def start_screen(accounts)
     end
 end
 
-start_screen(account)
+start_screen(accounts)
