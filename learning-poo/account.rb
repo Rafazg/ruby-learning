@@ -12,13 +12,13 @@ accounts = []
 
 def create_account
     puts('Digite o número da conta: ')
-    account_number = gets.chomp  # Use gets.chomp to remove newline character
+    account_number = gets.chomp  
 
     puts('Digite o saldo da conta: ')
     account_balance = gets.to_i
 
     puts('Digite o nome do usuário: ')
-    account_user = gets.chomp  # Use gets.chomp to remove newline character
+    account_user = gets.chomp  
 
     return Account.new(account_number, account_balance, account_user)
 end
@@ -29,7 +29,7 @@ def show_data(accounts)
         puts "#{index + 1} - Número da conta: #{account.number}"
     end
 
-    selection = gets.to_i - 1  # Subtract 1 to match array index
+    selection = gets.to_i - 1 
 
     if selection >= 0 && selection < accounts.length
         account = accounts[selection]

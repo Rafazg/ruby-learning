@@ -43,5 +43,5 @@ number = [2, 1, 5, 3, 4]
 keys = ['key_1011', 'key_0110', 'key_1101', 'key_0101', 'key_1010']
 browsers = ['Chrome', 'Firefox', 'Safari', 'Opera', 'IE']
 
-puts number.slice()
+
 
