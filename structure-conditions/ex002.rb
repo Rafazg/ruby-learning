@@ -17,7 +17,7 @@ end
 def bhaskara(a, b, c)
     x1 = (-b + Math.sqrt(deltaFind(a, b, c))) / (2 * a)
     x2 = (-b - Math.sqrt(deltaFind(a, b, c))) / (2 * a)
-    return puts ("X1 = #{x1}, X2 = #{x2}")
+    return puts ("X1 = #{'%.4f' % x1}, X2 = #{'%.4f' %x2}")
 end
 
 bhaskara(a, b, c)
