@@ -11,7 +11,7 @@ dinheiro_recebido = gets.to_f
 if dinheiro_recebido > preco_produto
     preco_produto = preco_produto * quantidade_comprada
     troco = dinheiro_recebido - preco_produto
-    puts("Troco: #{troco}")
+    puts("Troco: R$ #{troco}")
 elsif dinheiro_recebido < preco_produto
     puts('dinheiro insuficiente')
 end

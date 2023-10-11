@@ -1,5 +1,5 @@
 
-
+puts('')
 def operadora()
     puts('Escreva a quantidade de minutos: ')
     minutos = gets.to_i
