@@ -25,17 +25,8 @@ class GoodDog
         self.info
     end
 
+    #Class Method
     def self.what_am_i
         puts "I'am GoodDog class!"
     end
 end
-
-
-GoodDog.what_am_i
-
-spark = GoodDog.new("Spark", '12 inches', '10 lbs')
-puts(spark.info)
-
-spark.change_info('Julios', '15 inches', '20 lbs')
-
-puts(spark.info)
