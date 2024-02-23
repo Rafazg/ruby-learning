@@ -5,3 +5,4 @@ end
 def max(list)
    return list.max
 end
+ 
