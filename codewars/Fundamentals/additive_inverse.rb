@@ -7,14 +7,19 @@
 # invert([]) == []
 
 set_numbers = [1, -2, 3, 4, 5, 10, 50, 60, 80, -100]
+  
 
-inverse_numbers = []
+def invert_number(arr)
+  inverse_numbers = []
 
-set_numbers.each do |number|
-  inverse_numbers << -number
+  arr.each do |number|
+    inverse_numbers << -number
+  end
+
+  return inverse_numbers
 end
 
-puts(inverse_numbers)
+
 
 
 
