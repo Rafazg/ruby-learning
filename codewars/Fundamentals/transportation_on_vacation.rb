@@ -1,3 +1,6 @@
+
+
+
 def rental_car_cost(d)
     rent_day = 40
     total_value = d * rent_day
