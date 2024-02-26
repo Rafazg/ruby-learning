@@ -1,0 +1,1 @@
+return s.length < 4 ? puts ("middle") : puts ("nops")
