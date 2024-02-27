@@ -1,1 +1,2 @@
-return s.length < 4 ? puts ("middle") : puts ("nops")
+
+puts(get_middle(str))

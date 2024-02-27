@@ -1,8 +1,7 @@
-str = "teste"
 
 def get_middle(s)
-    return s.length.even? ? puts("even") : puts("odd")
-    # return s.length ? puts("middle") : puts("nops")
+    middle_index = s.length / 2
+    return s.length.even? ? s[middle_index - 1 ..middle_index] : s[middle_index] 
 end
-
+str = "test"
 puts(get_middle(str))
