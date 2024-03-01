@@ -12,3 +12,4 @@ array.each do |a|
   result = a ** 2
   puts "numero #{a} elevado a segunda potencia é #{result}"
 end
+
