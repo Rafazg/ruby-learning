@@ -1,1 +1,1 @@
-"Autor: #{@autor}\n Isbn: #{@isbn},\n Páginas: #{@numero_de_paginas}"
+puts biblioteca.livros
