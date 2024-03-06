@@ -1,3 +1,4 @@
+require File.expand_path('lib/biblioteca')
 class Livro
     attr_accessor :preco
    def initialize(autor, isbn = "1", numero_de_paginas, preco)
@@ -14,7 +15,12 @@ class Livro
 
 end
 
+biblioteca = Biblioteca.new
+
 teste_e_design = Livro.new("Mauricio Aniche", "123454", 247, 29.9)
 web_design_responsivo = Livro.new("Tárcio Zemel", "452565", 321, 39.9)
 
-puts teste_e_design.preco = 80
+biblioteca.adicionar_livros(teste_e_design)
+biblioteca.adicionar_livros(web_design_responsivo)
+
+p biblioteca.livros
