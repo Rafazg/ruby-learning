@@ -19,19 +19,30 @@ end
 
 biblioteca = Biblioteca.new
 
-teste_e_design = Livro.new("Mauricio Aniche", "123454", 247, 29.9, :tecnologia)
+teste_e_design = Livro.new("Mauricio Aniche", "123454", 247, 29.9, :testes)
 
-web_design_responsivo = Livro.new("Tárcio Zemel", "452565", 321, 39.9, :informação)
+web_design_responsivo = Livro.new("Tárcio Zemel", "452565", 321, 39.9, :web_design)
 
-# biblioteca.adicionar_livros(teste_e_design)
+jsf_e_jpa = Livro.new("Gilliard Cordeiro", "543465", 234, 64.9, :frameworks_mvc)
 
-# biblioteca.adicionar_livros(web_design_responsivo)
 
-hash = {"123454" => teste_e_design,
-        "452565" => web_design_responsivo}
-
-puts hash["123454"]
-
+########################################################
+#
 # biblioteca.livros.each_with_index do |livro, index| 
 #     puts "Posição: #{index}\n Livro #{livro}"
 # end
+########################################################
+
+biblioteca.adicionar_livros(teste_e_design)
+
+biblioteca.adicionar_livros(web_design_responsivo)
+
+hash = {}
+hash[:testes]=[[ teste_e_design ] ]
+hash[:web_design] = [ [ web_design_responsivo ] ]
+hash[:frameworks_mvc] = [ [ jsf_e_jpa ] ]
+
+puts hash.values.flatten
+
+
+        
