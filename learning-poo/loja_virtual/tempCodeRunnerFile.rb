@@ -1,1 +1,1 @@
-biblioteca.adicionar_livros(teste_e_design)
+"Autor: #{@autor}\n Isbn: #{@isbn},\n Páginas: #{@numero_de_paginas}"

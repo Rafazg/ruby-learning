@@ -1,4 +1,4 @@
-require File.expand_path('lib/biblioteca')
+require File.expand_path('learning-poo/loja_virtual/lib/biblioteca')
 class Livro
     attr_accessor :preco
    def initialize(autor, isbn = "1", numero_de_paginas, preco)
