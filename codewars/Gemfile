@@ -9,3 +9,5 @@ gem 'psych', '5.0.0'
 gem 'debug', '~> 1.8'
 
 gem 'rubocop', require: false
+
+gem 'rufo'
